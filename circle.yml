@@ -7,7 +7,7 @@ dependencies:
     - CGO_ENABLED=0 go build -a -installsuffix nocgo .
   override:
     - docker build -t quay.io/erick-ochieng/go-docker-circleci .
-    - docker run -p 8080:8080 quay.io/robtuley/go-docker-circleci:
+    - docker run -p 8080:8080 quay.io/erick-ochieng/go-docker-circleci:
         background: true
     - sleep 10
 

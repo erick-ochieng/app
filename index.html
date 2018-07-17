@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+...	
+	<title>{{template "title" .}}</title>	
+	
+	{{template "head" .}}
+  </head>
+  <body>
+...
+	{{template "content" .}}
+	
+	{{JS "static/js/jquery1.11.0.min.js"}}
+	{{JS "static/js/underscore-min.js"}}
+	{{JS "static/js/bootstrap.min.js"}}
+	{{JS "static/js/global.js"}}
+	
+	{{template "foot" .}}
+
+  </body>
+</html>

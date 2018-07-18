@@ -1,5 +1,5 @@
 FROM golang:alpine
-RUN https://github.com/erick-ochieng/app.git /opt/app/
+RUN git clone https://github.com/erick-ochieng/app.git /opt/app/
 ADD . /app/
 WORKDIR /app
 EXPOSE 8080

@@ -1,34 +1,7 @@
-<!-- forms.html -->
+package main
 
-{{if .Success}}
+	import "fmt"
 
-  <!-- submission response -->
-
-  <h1>Thanks for your message!</h1>
-
-{{else}}
-
-  <!-- Initial render page -->
-
-  <h1>Contact</h1>
-
-  <form method="POST">
-
-    <label>Email:</label><br />
-
-    <input type="text" name="email"><br />
-
-    <label>Department:</label><br />
-
-    <input type="text" name="department"><br />
-
-    <label>Description:</label><br />
-
-    <textarea name="description"></textarea><br />
-
-    <input type="submit">
-
-  </form>
-
-{{end}}
-
+	func main() {
+		fmt.Printf("Hello, world)
+	}

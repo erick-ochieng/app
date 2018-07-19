@@ -1,8 +1,6 @@
 machine:
   environment:
     PROJECT_GOPATH: /home/erick/app/.circleci
-    PROJECT_PARENT_PATH: git clone: https://github.com/erick-ochieng/app/edit/master/.circleci/circle.yml
-    PROJECT_PATH: /home/erick/app/.circleci/
     
 dependencies:
   pre:

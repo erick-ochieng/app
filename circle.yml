@@ -1,16 +1,14 @@
 machine:
-  environment:
-  
-    PROJECT_GOPATH: /home/erick/app
-    PROJECT_PARENT_PATH: /home/erick/app
-    PROJECT_PATH: /home/erick/app
-    
+  node:
+    version: 8.9.4
+  services:
+   - docker
+
 dependencies:
-  pre:
-    - go get -u github.com/erick-ochieng/app
-  override:
-    - mkdir -p /home/erick/app
-    - rsync -avC /home/erick/app
+  post:
+    - docker build -t erick .
 test:
-  override:
-    - cd /home/erick/app && /myapp.sh
+  post:
+    - docker run -d -p 8080:8080 app; sleep 10
+    
+- curl --retry 10 --retry-delay 5 localhost:8080 | grep "Hello World, This is my Simple Web App"

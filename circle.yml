@@ -6,13 +6,12 @@ machine:
     PROJECT_PATH: /home/erick/app
     
 dependencies:
-
   pre:
     - go get -u github.com/erick-ochieng/app
-      override:
+  override:
     - mkdir -p /home/erick/app
     - rsync -avC /home/erick/app
 test:
   override:
-- cd /home/erick/app && /myapp.sh
+    - cd /home/erick/app && /myapp.sh
 

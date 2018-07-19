@@ -7,8 +7,6 @@ machine:
     
 dependencies:
   pre:
-    - sudo apt-get update
-    - sudo apt-get install yamllint
     - go get -u github.com/erick-ochieng/app
   override:
     - mkdir -p /home/erick/app

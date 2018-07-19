@@ -8,7 +8,7 @@ dependencies:
   pre:
     - go get -u github.com/erick-ochieng/app
   override:
-    - mkdir -p /home/erick/app2
+    - mkdir -p /home/erick/app
 test:
   override:
     - cd /home/erick/app && ./myapp.sh

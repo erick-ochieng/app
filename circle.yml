@@ -14,5 +14,5 @@ dependencies:
     - rsync -avC /home/erick/app
 test:
   override:
-- cd /home/erick/app && ./myapp.sh
+- cd /home/erick/app && /myapp.sh
 

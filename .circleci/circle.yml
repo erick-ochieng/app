@@ -7,7 +7,7 @@ machine:
 dependencies:
   pre:
     - go get -u github.com/erick-ochieng/app/.circleci
-    - wget github.com / adrienverge / yamllint
+    - apt-get install yamllint
   override:
     - mkdir -p /home/erick/app/.circleci
     - rsync -avC /home/erick/app/.circleci

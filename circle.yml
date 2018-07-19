@@ -1,7 +1,7 @@
 machine:
   environment:
  
-    IMPORT_PATH: "github.com/erick-ochieng/app"
+    IMPORT_PATH: /home/erick/app
      
 dependencies:
   pre:

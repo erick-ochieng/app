@@ -2,7 +2,7 @@ machine:
   environment:
   
     PROJECT_GOPATH: /home/erick/app/.circleci
-    PROJECT_PARENT_PATH: git clone: https://github.com/erick-ochieng/app.git
+    PROJECT_PARENT_PATH: /home/erick/app/.circleci
     PROJECT_PATH: /home/erick/app/.circleci
     
 dependencies:

@@ -1,15 +1,15 @@
 machine:
   environment:
-    PROJECT_GOPATH: /home/erick/app
-    PROJECT_PARENT_PATH: git clone: https://github.com/erick-ochieng/app/tree/master
-    PROJECT_PATH: /home/erick/app/ $ circle.yml
+    PROJECT_GOPATH: /home/erick/app/.circleci
+    PROJECT_PARENT_PATH: git clone: https://github.com/erick-ochieng/app/edit/master/.circleci/circle.yml
+    PROJECT_PATH: /home/erick/app/.circleci/
     
 dependencies:
   pre:
-    - go get -u github.com/erick-ochieng/app
+    - go get -u github.com/erick-ochieng/app/.circleci
   override:
-    - mkdir -p /home/erick/app
-    - rsync -avC /home/erick/app $ circle.yml/" "$ /home/erick/app
+    - mkdir -p /home/erick/app/.circleci
+    - rsync -avC /home/erick/app/.circleci
 test:
   override:
-- cd /home/erick/app && ./myapp.sh
+- cd /home/erick/app/.circle && ./myapp.sh

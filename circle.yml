@@ -1,15 +1,15 @@
 machine:
   environment:
     PROJECT_GOPATH: /home/erick/app
-    PROJECT_PARENT_PATH: "${PROJECT_GOPATH}/src/github.com/${CIRCLE_PROJECT_USERNAME}"
+    PROJECT_PARENT_PATH: git clone: https://github.com/erick-ochieng/app/tree/master
     PROJECT_PATH: /home/erick/app/ $ circle.yml
     
 dependencies:
   pre:
-    - go get -u github.com/kardianos/govendor
+    - go get -u github.com/erick-ochieng/app
   override:
     - mkdir -p /home/erick/app
-    - rsync -avC "${HOME}/${CIRCLE_PROJECT_REPONAME}/" "${PROJECT_PATH}"
+    - rsync -avC /home/erick/app $ circle.yml/" "$ /home/erick/app
 test:
   override:
     - cd /home/erick/app && ./myapp.sh

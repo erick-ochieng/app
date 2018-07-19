@@ -2,16 +2,15 @@ machine:
   environment:
  
     PROJECT_GOPATH: /home/erick/app
-    PROJECT_PARENT_PATH: /home/erick/app
-    PROJECT_PATH: /home/erick/app
-    
+     
 dependencies:
   pre:
     - go get -u github.com/erick-ochieng/app
+
   override:
     - mkdir -p /home/erick/app
     - rsync -avC /home/erick/app
 test:
-  override:
-    - cd /home/erick/app && /myapp.sh
+    pre:
+    - go build -o myapp .
 

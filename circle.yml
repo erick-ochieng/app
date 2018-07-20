@@ -1,6 +1,6 @@
 machine:
   environment:
-    IMPORT_PATH: https://github.com/erick-ochieng/app.git
+    IMPORT_PATH: git clone https://github.com/home/erick /home/ubuntu/.go_workspace/src/github.com/home/erick
 
 dependencies:
   pre:

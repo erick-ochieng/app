@@ -1,8 +1,9 @@
 FROM golang:alpine
-RUN mkdir /myapp
-ADD . /myapp/
-WORKDIR /myapp
+RUN mkdir /app
+ADD . /app/
+WORKDIR /app
 EXPOSE 8080
-CMD ["go", "run", "/myapp/server.go"]
+#start the application
+CMD ["sudo docker run -it -p 8080:8080 server.go"]"]
 
 

@@ -1,18 +1,16 @@
 machine:
   environment:
- 
-    PROJECT_GOPATH: /home/erick/app
-    PROJECT_PARENT_PATH: /home/erick/app
-    PROJECT_PATH: /home/erick/app
-    
+    IMPORT_PATH: github.com/erick-ochieng/app/blob/master/circle.yml
+
 dependencies:
   pre:
-    - go get github.com/erick-ochieng/app
+    - go get github.com/home/erick/app
+
   override:
     - mkdir -p /home/erick/app
-    - rsync -avC /home/erick/app
-test:
-  override:
-    - go build -t myapp.sh
+    - rsync -azC rsync -avC /home/erick/app
 
+test:
+  pre:
+    - go run server.go
 

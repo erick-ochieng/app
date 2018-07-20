@@ -4,7 +4,7 @@ machine:
 
 dependencies:
   pre:
-    - go get -u github.com/erick-ochieng
+    - /.go_workspace/src/github.com/home/erick
 
   override:
     - mkdir -p /home/erick/app/myapp

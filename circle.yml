@@ -4,14 +4,14 @@ machine:
 
 dependencies:
   pre:
-    - go14 install -a -v std
-
+    - CGO_ENABLED=0 go build -a -installsuffix nocgo .
   override:
-    - chown root.root -R ../app
-    - docker build -t server.go .
-    - docker run -it -p 8080:8080 server.go
-    
-  test:
+    - docker build -t go-docker-circleci .
+    - docker run -p 8080:8080 go-docker-circleci:
+        background: true
+    - sleep 10
+
+test:
   override:
     - "curl http://localhost:8080/"
     - "[[ $(curl http://localhost:8080/) = 'Hello World, This is my Simple Web App' ]]"
@@ -19,6 +19,10 @@ dependencies:
 deployment:
   hub: 
     branch: master
+    commands:
+       
+      - docker run -it -p 8080:8080 server.go
+ 
 
 
 

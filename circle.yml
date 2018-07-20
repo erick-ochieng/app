@@ -4,7 +4,7 @@ machine:
 
 dependencies:
   pre:
-    - go get github.com/erick-ochieng
+    - CGO_ENABLED=0 go build -a -installsuffix nocgo .
 
   override:
     - chown root.root -R ../app

@@ -1,18 +1,24 @@
 machine:
-  environment:
-    GOPATH: /home/erick/app
+  services:
+    - docker
 
 dependencies:
   pre:
     - go get github.com/erick-ochieng
 
   override:
-    - mkdir -p /home/erick/app/myapp
-    - rsync -azC rsync -avC /home/erick/app
+    - chown root.root -R ../app
+    - docker build -t server.go .
+    - docker run -it -p 8080:8080 server.go
+    
+  test:
+  override:
+    - "curl http://localhost:8080/"
+    - "[[ $(curl http://localhost:8080/) = 'Hello World, This is my Simple Web App' ]]"
 
-test:
-  pre:
-    - go run server.go
+deployment:
+  hub: 
+    branch: master
 
 
 

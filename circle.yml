@@ -1,16 +1,14 @@
 machine:
   services:
     - docker
-  environment:
-    GOPATH: /home/erick/app
-IMPORT_PATH: github.com/erick-ochieng/app
 
 dependencies:
   pre:
+    - GOPATH: /home/erick/app
     - CGO_ENABLED=0 go build -a -installsuffix nocgo .
   override:
     - docker build -t go-docker-circleci .
-    - docker run -it -p 8080:8080 server.go
+    - docker run -p 8080:8080 go-docker-circleci:
         background: true
     - sleep 10
 
@@ -24,8 +22,7 @@ deployment:
     branch: master
     commands:
        
-      - docker run -it -p 8080:8080 server.go
- 
+      - docker run -it -p 8080:8080 go-docker-circleci
 
 
 

@@ -1,6 +1,6 @@
 machine:
   environment:
-    IMPORT_PATH: github.com/erick-ochieng
+    GOPATH: /home/erick/app
 
 dependencies:
   pre:

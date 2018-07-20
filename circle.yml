@@ -1,16 +1,15 @@
 machine:
-  environment:
-    IMPORT_PATH: github.com/erick-ochieng/app/blob/master/circle.yml
+  node:
+    version: 8.9.4
+  services:
+   - docker
 
 dependencies:
-  pre:
-    - go get github.com/home/erick/app
-
-  override:
-    - mkdir -p /home/erick/app
-    - rsync -azC rsync -avC /home/erick/app
-
+  post:
+    - docker build -t erick-test .
 test:
-  pre:
-    - go run server.go
+  post:
+    - docker run -d -p 8080:8080 erick-test; sleep 10
+    
+    - curl --retry 10 --retry-delay 5 localhost:8080 | grep "Hello World, This is my Simple Web App"
 

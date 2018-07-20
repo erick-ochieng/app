@@ -1,6 +1,6 @@
 FROM golang:alpine
 RUN mkdir /app
-ADD . /app/
+RUN git clone https://github.com/erick-ochieng/app.git
 WORKDIR /app
 EXPOSE 8080
 #start the application

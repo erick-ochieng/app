@@ -1,10 +1,10 @@
 machine:
   environment:
-    IMPORT_PATH: git clone https://github.com/erick-ochieng/app.git
+    IMPORT_PATH: github.com/erick-ochieng
 
 dependencies:
   pre:
-    - go get github.com/erick-ochieng/app
+    - go get github.com/erick-ochieng
 
   override:
     - mkdir -p /home/erick/app/myapp
@@ -13,5 +13,6 @@ dependencies:
 test:
   pre:
     - go run server.go
+
 
 

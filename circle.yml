@@ -1,13 +1,13 @@
 machine:
   environment:
-    IMPORT_PATH: github.com/erick-ochieng/app/blob/master/circle.yml
+    IMPORT_PATH: github.com/erick-ochieng
 
 dependencies:
   pre:
     - go get github.com/home/erick/app
 
   override:
-    - mkdir -p /home/erick/app
+    - mkdir -p /home/erick/app/myapp
     - rsync -azC rsync -avC /home/erick/app
 
 test:

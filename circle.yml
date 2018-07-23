@@ -1,29 +1,25 @@
 machine:
-
   services:
-     docker:
-     - image: circleci/golang:1.10
+    - docker
 
 dependencies:
-  pre:
-    - GOPATH: /home/erick/app
   override:
+    - docker info
     - docker build -t go-docker-circleci .
-    - docker run -p 8080:8080 go-docker-circleci:
-        background: true
-    - sleep 10
 
 test:
   override:
-    - "curl http://localhost:8080/"
-    - "[[ $(curl http://localhost:8080/) = 'Hello World, This is my Simple Web App' ]]"
+    - docker run -d -p 8080:8080 go-docker-circleci; sleep 10
+    - curl --retry 10 --retry-delay 5 -v http://localhost:8080
 
 deployment:
-  hub: 
+  hub:
     branch: master
     commands:
+
        
-      - docker run -it -p 8080:8080 go-docker-circleci
+      - docker run -it -p 8080:8080 server.go
+ 
 
 
 

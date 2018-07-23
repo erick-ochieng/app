@@ -5,6 +5,8 @@ machine:
      - image: circleci/golang:1.10
 
 dependencies:
+post:
+- rm -r ~/.gradle
   pre:
     - GOPATH: /home/erick/app
   override:
@@ -21,7 +23,6 @@ test:
 deployment:
   hub: 
     branch: master
-    context: org-global
     commands:
        
       - docker run -it -p 8080:8080 go-docker-circleci

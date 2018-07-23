@@ -2,7 +2,7 @@ machine:
 
   services:
      docker:
-     - image: circleci/golang:1.8
+     - image: circleci/golang:1.10
 
 dependencies:
   pre:

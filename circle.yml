@@ -22,7 +22,7 @@ deployment:
     branch: master
     commands:
        
-    - docker run -it -p 8080:8080 go-docker-circleci
+    - docker run -t -p 8080:8080 go-docker-circleci
  
 
 

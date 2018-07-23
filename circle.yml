@@ -5,8 +5,6 @@ machine:
      - image: circleci/golang:1.10
 
 dependencies:
-post:
-- rm -r ~/.gradle
   pre:
     - GOPATH: /home/erick/app
   override:

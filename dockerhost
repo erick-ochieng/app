@@ -1,7 +1,6 @@
 ROM golang:1:10
 
 # Copy the local package files to the container's workspace.
-ADD . /go/src/tmp/hello-go-ecs-terraform
 
 # Build the command inside the container.
 RUN go install tmp/hello-go-ecs-terraform

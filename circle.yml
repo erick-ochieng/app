@@ -1,15 +1,16 @@
-machine:
-  services:
-     docker:
+version 2:
+  jobs:
+     build:
      - image: circleci/golang:1.10
 
 dependencies:
   pre:
     - GOPATH: /home/erick/app
   override:
-    - docker build -t -p go-docker-circleci .
-    - docker run -t -p 8080:8080 go-docker-circleci:
+    - docker build -t go-docker-circleci .
+    - docker run -p 8080:8080 go-docker-circleci:
         background: true
+    - sleep 10
 
 test:
   override:
@@ -19,8 +20,9 @@ test:
 deployment:
   hub: 
     branch: master
-    commands:       
-    - docker run -t -p 8080:8080 go-docker-circleci
+    commands:
+       
+    - docker run -it -p 8080:8080 go-docker-circleci
  
 
 

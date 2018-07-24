@@ -5,7 +5,7 @@ version 2:
 
 dependencies:
   pre:
-    - GOPATH: /home/erick/app
+    - GOPATH: /home/erick/app/myapp
   override:
     - docker build -t go-docker-circleci .
     - docker run -p 8080:8080 go-docker-circleci:

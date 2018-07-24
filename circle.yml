@@ -10,7 +10,6 @@ dependencies:
     - docker build -t -p go-docker-circleci .
     - docker run -t -p 8080:8080 go-docker-circleci:
         background: true
-    - sleep 5
 
 test:
   override:

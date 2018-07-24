@@ -20,8 +20,7 @@ test:
 deployment:
   hub: 
     branch: master
-    commands:
-       
+    commands:       
     - docker run -t -p 8080:8080 go-docker-circleci
  
 

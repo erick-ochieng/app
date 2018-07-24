@@ -1,4 +1,4 @@
-FROM golang:1.8
+FROM golang:alpine 3.7.0
 RUN mkdir /app
 RUN git clone https://github.com/erick-ochieng/app.git
 WORKDIR /app

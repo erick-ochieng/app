@@ -1,7 +1,7 @@
 machine:
   services:
      docker:
-     - image: circleci/golang:1.9
+     - image: golang/alpine
 
 dependencies:
   pre:

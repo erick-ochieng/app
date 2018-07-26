@@ -5,6 +5,7 @@ machine:
 
 dependencies:
   pre:
+    - CGO_ENABLED=0 go build -a -installsuffix nocgo .
     - GOPATH: /home/erick/app
   override:
     - docker build -t -p go-docker-circleci .

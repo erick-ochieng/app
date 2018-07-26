@@ -3,6 +3,7 @@ resource "aws_instance" "default" {
   instance_type   = "${t2.micro}"
   key_name        = "${erick-key}"
   security_groups = ["${launch-wizard-1}"]
+  user_data = "${file("setup.sh")}"
  
   tags {
     Name = "docker-test"
